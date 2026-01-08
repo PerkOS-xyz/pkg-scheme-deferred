@@ -1,6 +1,6 @@
 {
   "name": "@perkos/scheme-deferred",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "EIP-712 Voucher-based deferred payment verification utilities for x402 deferred scheme",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -13,7 +13,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
@@ -36,7 +37,7 @@
     "url": "https://github.com/PerkOS-xyz/pkg-scheme-deferred"
   },
   "dependencies": {
-    "@perkos/types-x402": "^1.0.0",
+    "@perkos/types-x402": "^1.1.0",
     "@perkos/util-chains": "^1.0.0",
     "viem": "^2.28.2"
   },
