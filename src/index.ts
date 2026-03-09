@@ -286,7 +286,7 @@ export class DeferredSchemeVerifier {
 
     // Validate amount (should not exceed max)
     const valueAggregate = BigInt(voucher.valueAggregate);
-    const maxAmount = BigInt(requirements.maxAmountRequired);
+    const maxAmount = BigInt(requirements.maxAmountRequired || "0");
     if (valueAggregate > maxAmount) {
       return false;
     }
@@ -443,7 +443,7 @@ export function createEIP712Domain(
  */
 export function generateVoucherId(): Hex {
   const bytes = new Uint8Array(32);
-  crypto.getRandomValues(bytes);
+  (globalThis as any).crypto.getRandomValues(bytes);
   return `0x${Array.from(bytes)
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("")}` as Hex;
